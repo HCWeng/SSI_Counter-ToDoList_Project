@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InputField from "./InputField";
 import ItemList from "./ItemList";
+import classes from "./TdList.module.css";
 
 const TdList = () => {
   const [items, setItems] = useState([]);
@@ -37,10 +38,16 @@ const TdList = () => {
   });
 
   return (
-    <div>
+    <div className={classes.container}>
       <InputField value={inputValue} onChange={handleInputChange} />
-      <button onClick={handleAddItem}>Add</button>
-      <select value={sortOption} onChange={handleSortChange}>
+      <button className={classes["blue-button"]} onClick={handleAddItem}>
+        Add
+      </button>
+      <select
+        className={classes["select"]}
+        value={sortOption}
+        onChange={handleSortChange}
+      >
         <option value="A-Z">A-Z</option>
         <option value="Z-A">Z-A</option>
       </select>

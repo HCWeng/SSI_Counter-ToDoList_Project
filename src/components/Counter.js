@@ -11,6 +11,7 @@ function Counter() {
     return () => clearInterval(timer);
   }, [timer]);
 
+  //Handler
   const incrementHandler = () => {
     setCount((prevCount) => prevCount + 1);
   };
@@ -30,7 +31,7 @@ function Counter() {
       setCount((prevCount) => prevCount + 1);
     }, 1000);
   };
-
+  //set the Timer
   const toggleTimerHandler = () => {
     if (timerRunning) {
       clearInterval(timer);
@@ -47,18 +48,29 @@ function Counter() {
   return (
     <div className={classes.container}>
       <div className={classes.counter}>
-        <h2 className= {classes["blue-text"]}>Current Count: {count}</h2>
+        <h2 className={classes["blue-text"]}>Current Count: {count}</h2>
       </div>
-      <div >
-        <button className={classes["button"]} onClick={incrementHandler}>Increment</button>
-        <button className={classes["button"]}onClick={decrementHandler}>Decrement</button>
+      <div>
+        <button className={classes["button"]} onClick={incrementHandler}>
+          Increment
+        </button>
+        <button className={classes["button"]} onClick={decrementHandler}>
+          Decrement
+        </button>
       </div>
       <div className="button-row">
-        <button className={classes["button"]} onClick={incrementIfOddHandler}>Increment If Odd</button>
-        <button className={classes["button"]} onClick={asyncIncrementHandler}>Async Increment</button>
+        <button className={classes["button"]} onClick={incrementIfOddHandler}>
+          Increment If Odd
+        </button>
+        <button className={classes["button"]} onClick={asyncIncrementHandler}>
+          Async Increment
+        </button>
       </div>
       <div className="button-row">
-        <button   className={classes["timer-button"]} onClick={toggleTimerHandler}>
+        <button
+          className={classes["timer-button"]}
+          onClick={toggleTimerHandler}
+        >
           {timerRunning ? "Stop Timer" : "Start Timer"}
         </button>
       </div>
