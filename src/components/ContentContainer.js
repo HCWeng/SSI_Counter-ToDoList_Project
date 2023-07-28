@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import HOC from "./HOC";
-import Counter from "./Counter"; // Make sure to replace './Counter' with the correct path to the Counter.js file
-import TdList from "./TdList"; // Make sure to replace './TdList' with the correct path to the TdList.js file
+import Counter from "./Counter";
+import TdList from "./TdList";
+import classes from "./ContentContainer.module.css";
 
 const ContentContainer = () => {
   const [showCounter, setShowCounter] = useState(true);
@@ -19,10 +20,10 @@ const ContentContainer = () => {
   const HOCTdList = HOC(TdList);
 
   return (
-    <div>
-      <div>
-        <label>
-          Show Counter:
+    <div className={classes.container}>
+      <div className={classes["checkbox-label"]}>
+        <label className={classes["label-class"]}>
+          1. Show Counter:
           <input
             type="checkbox"
             checked={showCounter}
@@ -31,9 +32,9 @@ const ContentContainer = () => {
         </label>
       </div>
       {showCounter && <HOCCounter visible={showCounter} />}
-      <div>
-        <label>
-          Show To-do List:
+      <div className={classes["checkbox-label"]}>
+        <label className={classes["label-class"]}>
+          2. Show To-do List:
           <input
             type="checkbox"
             checked={showTdList}

@@ -4,8 +4,8 @@ import ContentContainer from "./components/ContentContainer";
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>SSI_ReactComponentPratice</h1>
+      <h2>The Counter and the To-do list.</h2>
       <ContentContainer />
     </div>
   );
