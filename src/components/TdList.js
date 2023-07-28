@@ -43,6 +43,9 @@ const TdList = () => {
       <button className={classes["blue-button"]} onClick={handleAddItem}>
         Add
       </button>
+
+      <label className={classes["label-container"]}>To sort: </label>
+
       <select
         className={classes["select"]}
         value={sortOption}
